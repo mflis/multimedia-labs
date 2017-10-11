@@ -8,19 +8,16 @@
  - `docker pull jrottenberg/ffmpeg` - daily build, zawiera  codec do narrowband(zad II/1/f)
 
 # Odpalanie dockera
-Wersja fish shell:
-```
- docker run  --rm -v (pwd):/tmp/workdir -w="/tmp/workdir" jrottenberg/ffmpeg  KOMENDY
-```
-Wersja bash shell:
-```
- docker run --rm -v `pwd`:/tmp/workdir -w="/tmp/workdir" jrottenberg/ffmpeg  KOMENDY
-```
+ - `docker run  --rm -v (pwd):/tmp/workdir -w="/tmp/workdir" jrottenberg/ffmpeg  KOMENDY` -Wersja fish shell
+ - `docker run --rm -v ``pwd``:/tmp/workdir -w="/tmp/workdir" jrottenberg/ffmpeg  KOMENDY` - Wersja bash shell:
+ - `alias ffmpeg " docker run --rm  -v (pwd):/tmp/workdir -w="/tmp/workdir" jrottenberg/ffmpeg -y"` - alias chowający dokcera
+
 ### Opcje
 -  `--rm` - usuń kontener po zakończeniu wykonania komendy 
 - `-v (pwd):/tmp/workdir` - podmontowanie obecnego katalogu na host do `/tmp/workdir`
 -  `-w="/tmp/workdir"` - ustawienie bieżącego katalogu wenątrz dockera
   Podsumowując: docker widzi nasz obecny katalog 
+- `-y` - flaga dla ffmpeg, aby nadpisywała plik wyjściowy bez pytania
 
 ## Zadanie II – Kompresja g.7xx
 
