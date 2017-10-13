@@ -23,10 +23,11 @@
 
 ### Opcje 
 - `-i` - plik wejściowy
-- `-acodec` - kodek audio. Wybierany z listy `ffmpeg -encoders`
+- `-acodec` lub `-codec:a` - kodek audio. Własciwy codec można znaleźć za pomocą `ffmpeg -encoders | grep SZUKANY_CODEC`
 - `-ab` - audio bitrate
 - `-ar` - audio sampling frequency
 - `-ac` - number of audio channels
+
 
 -------------
 1) Przy użyciu programu ffmpeg przekonwertować przykładowe pliki audio
@@ -47,4 +48,21 @@ słowo kodowe 8 bitów (z oryginalnych 16 bitów)
 - e) [g.722] na format g722, częstotliwość próbkowania 16kHz, słowo kodowe 16
 bitów, bitrate 64kbity/s
 - f) [amr] na format amr (narrowband), częstotliwość próbkowania 8Khz, jeden
-kanał, wszystkie dostępne bitrate (sprawdzić jakie są dostępne )
+kanał, wszystkie dostępne bitrate (sprawdzić jakie są dostępne)
+
+
+## Zadanie III – Kompresja mp3
+
+- `-qscale:a` - jakość kompresji przy mp3 . Dopuszczalne wartości `0-9`. Niższa cyfra -> lepsza jakość -> większy rozmia  
+
+1) [VBR] Skompresować przykładowe pliki dźwiękowe (mowa, muzyka) z wykorzystaniem kodeka MP3 w trybie VBR. Porównać rozmiary plików oryginalnych i po kompresji oraz odsłuchowo sprawdzić jakość otrzymanych rezultatów. Należy przetestować efekty dla co najmniej 3 różnych wartości parametru określającego jakość kompresji.
+
+``` ffmpeg -i lvb-sym-5-1\ \(1\).wav  -codec:a libmp3lame -qscale:a 2 out2.mp3 ```
+
+2) [CBR] Skompresować przykładowe pliki dźwiękowe (mowa, muzyka) z wykorzystaniem kodeka MP3 w trybie CBR. Porównać rozmiary plików oryginalnych i po kompresji oraz odsłuchowo sprawdzić jakość otrzymanych rezultatów.
+Sprawdzić jaki najniższy bitrate można osiągnąć i jaka jest jakość po kompresji.
+3) [CBR niski bitrate] Jeśli chcemy uzyskać niższy CBR niż przy użyciu samego
+programu ffmpeg. Konieczne jest bezpośrednie skorzystanie z programu lame.
+Można to zrobić wywołując w potoku programy ffmpeg i lame:
+
+`ffmpeg -i [plik źródłowy] -f wav - | lame --cbr -b 8 - out.mp3 `
