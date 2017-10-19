@@ -2,11 +2,10 @@
 Tematyka:
 H323 Podstawy
 Zadanie I – Sprawdzenie podstawowej funkcjonalności punktu końcowego
-getting-started - http://support.polycom.com/global/documents/support/user/products/video/vsx_series_getting_started_guide.pdf
-file:///home/marcin/Desktop/SemestrVII/MULTIMEDIA/labki/lab2/vsx_series_getting_started_guide.pdf
+ - getting-started - http://support.polycom.com/global/documents/support/user/products/video/vsx_series_getting_started_guide.pdf
 
-admin-guide - https://support.polycom.com/content/dam/polycom-support/products/Telepresence-and-Video/VSX%20Series/user/en/vsx_series_admin_guide.pdf
-file:///home/marcin/Desktop/SemestrVII/MULTIMEDIA/labki/lab2/Polycom-VSX-7000_user-guide.pdf
+ - admin-guide - https://support.polycom.com/content/dam/polycom-support/products/Telepresence-and-Video/VSX%20Series/user/en/vsx_series_admin_guide.pdf
+
  -  1) bezpośrednie połączenie audio/video z innym punktem końcowym wskazanym za pomocą adresu IP
 
 ```
